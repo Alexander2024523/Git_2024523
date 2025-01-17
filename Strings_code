@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package homework1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author DELL
+ */
+public class Homework1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     Scanner myKB = new Scanner(System.in);
+        
+        String userInput;
+        
+        do {
+            
+            
+            System.out.println("Enter your name:");
+            System.out.println("You must enter text only");
+            
+            userInput = myKB.nextLine(); //reads user input
+            
+            if (!userInput.matches("[a-zA-Z.!,? '\"]+")){
+                System.out.println("You input numbers! You must input text only!");
+                //If user inputs numbers, outputs text telling the user to input text only
+            }
+            
+        } while (!userInput.matches("[a-zA-Z.!,? '\"]+"));
+        // user must input text, otherwise it will repeat and ask for input again
+        
+        
+        userInput = userInput.substring(0,1).toUpperCase() + userInput.substring(1).toLowerCase();
+       //makes sure the first letter is capitalize and the rest is in lower case
+        
+        System.out.println(userInput); //outputs the text
+        
+        
+    }
+}
